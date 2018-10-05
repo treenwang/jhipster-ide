@@ -39,5 +39,9 @@
 		<unit id="org.eclipse.m2e.logback.feature.feature.group" version="0.0.0"/>
 		<repository location="http://download.eclipse.org/technology/m2e/releases/1.9/1.9.1.20180912-1601/"/>
 	</location>
+	<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+		<unit id="jdt-codemining-feature.feature.group" version="1.0.0.201809251338"/>
+		<repository location="http://oss.opensagres.fr/jdt-codemining/snapshot/"/>
+	</location>
 </locations>
 </target>

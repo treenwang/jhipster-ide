@@ -58,6 +58,11 @@ Workflow {
 				pluginProject = false
 			}
 
+			fragment = ui.codemining.CodeMiningFragment {
+		      generateStub = true
+		      generateXtendStub = false
+		    }
+
 			serializer = {
 				generateStub = false
 			}

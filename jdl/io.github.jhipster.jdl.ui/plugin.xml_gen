@@ -449,4 +449,22 @@
 				project="true">
 		</wizard>
 	</extension>
+	<!-- code mining -->
+	<extension point="org.eclipse.ui.workbench.texteditor.codeMiningProviders">
+		<codeMiningProvider
+			class="io.github.jhipster.jdl.ui.JDLExecutableExtensionFactory:org.eclipse.jface.text.codemining.ICodeMiningProvider"
+			id="io.github.jhipster.jdl.JDL.CodeMiningProvider"
+			label="JDL Codemining">
+			<enabledWhen>
+				<with variable="editorInput">
+					<adapt type="org.eclipse.core.resources.IFile">
+						<test
+							property="org.eclipse.core.resources.contentTypeId"
+							value="io.github.jhipster.jdl.JDL.contenttype">
+						</test>
+					</adapt>
+				</with>
+			</enabledWhen>
+		</codeMiningProvider>
+	</extension>
 </plugin>
