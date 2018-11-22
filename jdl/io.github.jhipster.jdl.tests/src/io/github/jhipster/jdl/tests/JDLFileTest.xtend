@@ -135,6 +135,7 @@ class JDLFileTest {
 		jdlReferencedFiles.forEach[
 			resourceSet.getResource(URI.createURI(absoluteFile.toURI.toString), true)
 		]
+		println('''Load and validate «jdlFile»''')
 		val resource = resourceSet.getResource(URI.createURI(jdlFile.toURI.toString), true)
 		// validate the resource
 		val issues = validator.validate(resource, CheckMode.ALL, CancelIndicator.NullImpl)
@@ -146,6 +147,12 @@ class JDLFileTest {
 		]
 		// configure and start the generator
 		fileAccess.setOutputPath("src-gen/");
-		generator.doGenerate(resource, fileAccess, null);
+		try {
+			generator.doGenerate(resource, fileAccess, null);
+		} catch (Exception ex) {
+			println('''Error in «jdlFile»''')
+			ex.printStackTrace
+			throw ex
+		}
 	}
 }
